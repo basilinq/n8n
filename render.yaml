@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: n8n
+    env: node
+    plan: free
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        generateValue: true
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
+      - key: N8N_HOST
+        value: n8n-macchiavelli.onrender.com
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: WEBHOOK_URL
+        value: https://n8n-macchiavelli.onrender.com/
+      - key: N8N_RUNNERS_ENABLED
+        value: true
+      - key: DB_SQLITE_POOL_SIZE
+        value: 10
+      - key: N8N_BLOCK_ENV_ACCESS_IN_NODE
+        value: false
