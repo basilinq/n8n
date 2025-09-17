@@ -102,12 +102,17 @@ export const defaultSettings: FrontendSettings = {
 	versionCli: '',
 	nodeJsVersion: '',
 	concurrency: -1,
+	isNativePythonRunnerEnabled: false,
 	versionNotifications: {
 		enabled: true,
 		endpoint: '',
 		infoUrl: '',
 		whatsNewEnabled: true,
 		whatsNewEndpoint: '',
+	},
+	dataTables: {
+		maxSize: 0,
+		warningThreshold: 0,
 	},
 	workflowCallerPolicyDefaultOption: 'any',
 	workflowTagsDisabled: false,
